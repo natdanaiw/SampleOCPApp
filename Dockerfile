@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the project files into the container
 COPY *.csproj ./
 
+# Ensure permissions for the working directory
+RUN chmod -R 777 /app
+
 # Restore the project dependencies
 RUN dotnet restore
 
