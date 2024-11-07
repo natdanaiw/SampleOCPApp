@@ -1,6 +1,9 @@
 # Use the Red Hat UBI 8 .NET 8 image as the base image
 FROM registry.access.redhat.com/ubi8/dotnet-80:latest AS build
 
+# Switch to root user to change permissions
+USER root
+
 # Set the working directory within the container
 WORKDIR /app
 
