@@ -4,7 +4,7 @@
 #FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 
 # Use UBI (Universal Base Image) with .NET on IBM Power architecture
-FROM registry.access.redhat.com/ubi8/dotnet-60:latest AS base
+FROM registry.access.redhat.com/ubi8/dotnet-80:latest AS base
 USER app
 WORKDIR /app
 EXPOSE 8080
@@ -12,7 +12,7 @@ EXPOSE 8080
 
 # This stage is used to build the service project
 #FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-FROM registry.access.redhat.com/ubi8/dotnet-60:latest AS build
+FROM registry.access.redhat.com/ubi8/dotnet-80:latest AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["SampleOCPApp.csproj", "."]
