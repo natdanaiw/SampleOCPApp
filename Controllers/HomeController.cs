@@ -15,6 +15,7 @@ namespace SampleOCPApp.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Message = "Hello IBM Power";
             return View();
         }
 
